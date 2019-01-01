@@ -60,6 +60,7 @@ class Item(Resource):
         cursor = connection.cursor()
         query = "DELETE FROM items WHERE name = ?"
         cursor.execute(query, (name,))
+        connection.commit()
         connection.close()
         return {"message": "Item Deleted"}, 201
 
