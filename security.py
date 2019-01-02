@@ -1,15 +1,15 @@
 from werkzeug.security import safe_str_cmp
-from resources.user import User
+from resources.user import UserModel
 
 users = [
-    User(1, "chris", "VMware1!")
+    UserModel(1, "chris", "VMware1!")
 ]
 
 username_mapping = {u.username: u for u in users}
 userid_mapping = {u.id: u for u in users}
 
 def authenticate(username, password):
-    user = User.find_by_username(username)
+    user = UserModel.find_by_username(username)
     if user and safe_str_cmp(user.password, password):
         return user
 

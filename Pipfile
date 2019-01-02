@@ -4,6 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pylint = "*"
 
 [packages]
 aniso8601 = "==4.0.1"
@@ -20,6 +21,10 @@ MarkupSafe = "==1.1.0"
 PyJWT = "==1.4.2"
 SQLAlchemy = "==1.2.15"
 Werkzeug = "==0.14.1"
+sqlite3 = "*"
+pipenv = "*"
+install = "*"
+db = "*"
 
 [requires]
 python_version = "3.7"
