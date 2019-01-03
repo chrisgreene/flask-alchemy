@@ -1,13 +1,6 @@
 from werkzeug.security import safe_str_cmp
 from resources.user import UserModel
 
-users = [
-    UserModel(1, "chris", "VMware1!")
-]
-
-username_mapping = {u.username: u for u in users}
-userid_mapping = {u.id: u for u in users}
-
 def authenticate(username, password):
     user = UserModel.find_by_username(username)
     if user and safe_str_cmp(user.password, password):
@@ -15,4 +8,4 @@ def authenticate(username, password):
 
 def identity(payload):
     user_id = payload['identity']
-    return userid_mapping.get(user_id, None)
+    return UserModel.find_by_id(user_id)
