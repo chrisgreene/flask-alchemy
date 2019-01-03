@@ -1,0 +1,16 @@
+-i https://pypi.org/simple
+aniso8601==4.0.1
+click==7.0
+flask-jwt==0.3.2
+flask-restful==0.3.7
+flask-sqlalchemy==2.3.2
+flask==1.0.2
+itsdangerous==1.1.0
+jinja2==2.10
+markupsafe==1.1.0
+pyjwt==1.4.2
+pytz==2018.7
+six==1.12.0
+sqlalchemy==1.2.15
+uwsgi==2.0.17.1
+werkzeug==0.14.1
