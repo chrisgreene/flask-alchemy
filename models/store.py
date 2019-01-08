@@ -19,8 +19,8 @@ class StoreModel(db.Model):
         db.session.commit()
 
     def delete_from_db(self):
-        print(f"deleting store {self.name}")
-        print(f"deleting store {self.id}")
+        #print(f"deleting store {self.name}")
+        #print(f"deleting store {self.id}")
         db.session.delete(self)
         db.session.commit()
 

@@ -9,7 +9,7 @@ class UserRegister(Resource):
     
     def post(self):
         request_data = UserRegister.parser.parse_args()
-        print(f"request_data: {request_data}")
+        #print(f"request_data: {request_data}")
         if UserModel.find_by_username(request_data["username"]):
             return {"message": "User '{}' already exists.".format(request_data["username"])}, 400
         user = UserModel(**request_data)

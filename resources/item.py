@@ -9,7 +9,7 @@ class Item(Resource):
 
     @jwt_required()
     def get(self, name):
-        print(f"user is {current_identity.username}")
+        #print(f"user is {current_identity.username}")
         item = ItemModel.find_by_name(name)
         if item:
             return item.json()
@@ -22,7 +22,7 @@ class Item(Resource):
 
         request_data = Item.parser.parse_args()
         item = ItemModel(name, request_data["price"], request_data["store_id"])
-        print(f"item: {item}")
+        #print(f"item: {item}")
         try:
             item.save_to_db()
         except:
@@ -50,7 +50,7 @@ class Item(Resource):
     def put(self, name):
         request_data = Item.parser.parse_args()
         item = ItemModel.find_by_name(name)
-        print(f"item: {item}")
+        #print(f"item: {item}")
         if item is None:
             item = ItemModel(name, request_data["price"], request_data["store_id"])
         else: 
